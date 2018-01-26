@@ -1,0 +1,54 @@
+--[[
+# Theme		: elegance-beam-midnight, based from Elegance-beam conky by capn-damo (https://capn-damo.deviantart.com/art/Elegance-beam-conky-691220003)
+# Author	: F Hamzah <fahrud26@gmail.com>
+# License	: Distributed under the terms of GNU GPL version 2 or later
+]]
+
+conky.config = {
+	alignment = 'top_right',
+	background = false,
+	border_inner_margin = 15,
+	border_width = 5,
+	default_color = 'ffffff',  --ffffff # grey 5f5f5f 3F3F3F 183149 3B3B3B 26211F
+	double_buffer = true,
+	draw_borders = false,
+	draw_graph_borders = false,
+	draw_outline = false,
+	draw_shades = false,
+	gap_x = 25,
+	gap_y = 25,
+	maximum_width = 320,
+	double_buffer = true,
+	override_utf8_locale = true,
+    own_window = true,
+    own_window_class = 'Conky',
+    own_window_type = 'normal',
+	own_window_transparent = true,
+	own_window_hints = 'undecorated,below,skip_taskbar,skip_pager,sticky',
+	own_window_argb_visual = true,
+	own_window_argb_value = 150,
+	text_buffer_size = 8000,
+	total_run_times = 0,
+	update_interval = 1,
+	uppercase = false,
+	use_xft = true,
+	xftalpha = 1,
+	short_units = false,
+	font = 'Raleway:style=Light:pixelsize=16',
+	color1 = '9FA2BA',
+	color2 = '74778B',
+	color3 = '525461',
+};
+
+conky.text = [[
+${font Raleway:pixelsize=150}${alignr}${color1}${time %H}
+${voffset -35}${alignr}${color2}${time %M}
+${voffset -90}${color3}${font Raleway:pixelsize=25}${alignr}${time %A}  |  ${alignr}${time %B %d, %Y}${color}${font}
+${voffset 20}cpu1 ${alignr}${cpu cpu1}%
+cpu2 ${alignr}${cpu cpu2}%
+ram ${alignr}${mem} / ${memmax}
+swap ${alignr}${swap} / ${swapmax}
+system  ${alignr}${fs_used_perc /}% / ${fs_size /}
+home  ${alignr}${fs_used_perc /home}% / ${fs_size /home}
+${voffset 30}${font Raleway:pixelsize=18}${alignr}${color3}Linux  ${kernel}${color}
+]];
